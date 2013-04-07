@@ -25,3 +25,9 @@ dotfiles
 > echo .vim/vundle >> ~/.gitignore
 
 That's it!
+
+##### Ref
+[dotfilesをgithubで管理し、Vundleを導入する](http://d.hatena.ne.jp/oovu70/20120324/p1)
+
+Thanks!
+
