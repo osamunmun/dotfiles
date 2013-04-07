@@ -1,13 +1,14 @@
 "vundle 対応
 set nocompatible
 filetype off
-set rtp+=~/DropBox/dotfiles/vim/vimfiles/vundle/
+"Please set your own vundle directory.
+set rtp+=~/DropBox/dotfiles/vim/vimfiles/vundle/ 
 call vundle#rc()
 
 " vim-scripts リポジトリ
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'Shougo/unite.vim'
-Bundle 'https://github.com/Shougo/neocomplcache-snippets-complete'
+Bundle 'https://github.com/Shougo/neosnippet'
 Bundle 'neocomplcache'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'http://github.com/Shougo/vimshell.git'
