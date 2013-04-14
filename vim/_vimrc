@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 "Please set your own vundle directory.
-set rtp+=~/DropBox/dotfiles/vim/vimfiles/vundle/ 
+set rtp+=~/dotfiles/vim/vimfiles/vundle/ 
 call vundle#rc()
 
 " vim-scripts リポジトリ
@@ -14,6 +14,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'http://github.com/Shougo/vimshell.git'
 Bundle 'http://github.com/thinca/vim-quickrun.git'
 Bundle 'https://github.com/Lokaltog/vim-powerline'
+Bundle 'ref.vim'
 
 " Color Scheme
 "colorscheme molokai
