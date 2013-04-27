@@ -10,7 +10,7 @@ alias ber='bundle exec rake'
 alias bi='bundle install'
 alias gp='git push'
 alias gad='git add -p'
-alias gci='git commit -m'
+alias gci='git commit'
 alias gis='git status'
 alias gdif='git diff'
 
