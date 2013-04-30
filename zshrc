@@ -13,6 +13,9 @@ alias gad='git add -p'
 alias gci='git commit'
 alias gis='git status'
 alias gdif='git diff'
+alias gremov='git remote -v'
+alias gbranr='git branch -r'
+alias rspec='bundle exec rspec'
 
 ## Directory to save history
 HISTFILE=~/.zsh-history
