@@ -15,7 +15,7 @@ alias gis='git status'
 alias gdif='git diff'
 alias gremov='git remote -v'
 alias gbranr='git branch -r'
-alias rspec='bundle exec rspec'
+alias bespec='bundle exec foreman run rspec'
 
 ## Directory to save history
 HISTFILE=~/.zsh-history
@@ -56,7 +56,7 @@ setopt auto_list
 setopt hist_ignore_dups
 ## cd 時に自動で push
 DIRSTACKSIZE=100
-setopt auto_pushd 
+setopt auto_pushd
 ## 同じディレクトリを pushd しない
 setopt pushd_ignore_dups
 ## ファイル名で #, ~, ^ の 3 文字を正規表現として扱う

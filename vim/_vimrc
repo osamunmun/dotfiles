@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 "Please set your own vundle directory.
-set rtp+=~/dotfiles/vim/vimfiles/vundle/ 
+set rtp+=~/dotfiles/vim/vimfiles/vundle/
 call vundle#rc()
 
 " vim-scripts リポジトリ
@@ -78,9 +78,9 @@ let g:quickrun_config.markdown = {
     \ 'args':'Marked',
     \ 'exec':'%c %o %a %s',
     \ }
-let g:quickrun_config._ = {'runner' : 'vimproc', "outputter/buffer/into" : 1} 
-let g:quickrun_config['ruby.rspec'] = { 'command': 'rspec', 'cmdopt': 'bundle exec', 'exec': '%o %c %s'}
+let g:quickrun_config._ = {'runner' : 'vimproc', "outputter/buffer/into" : 1}
+let g:quickrun_config['ruby.rspec'] = { 'command': 'rspec', 'cmdopt': 'bundle exec foreman run --root=../..', 'exec': '%o %c %s'}
 augroup RSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-augroup END 
+augroup END
