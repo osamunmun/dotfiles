@@ -2,11 +2,11 @@
 set nocompatible
 filetype off
 "Please set your own vundle directory.
-set rtp+=~/dotfiles/vim/vimfiles/vundle/
+set rtp+=~/.dotfiles/dotfiles/vim/vimfiles/vundle/
 call vundle#rc()
 
 " vim-scripts リポジトリ
-Bundle 'git://github.com/tpope/vim-rails.git'
+Bundle 'http://github.com/tpope/vim-rails.git'
 Bundle 'Shougo/unite.vim'
 Bundle 'https://github.com/Shougo/neosnippet'
 Bundle 'neocomplcache'
@@ -15,7 +15,7 @@ Bundle 'http://github.com/Shougo/vimshell.git'
 Bundle 'http://github.com/thinca/vim-quickrun.git'
 Bundle 'https://github.com/Lokaltog/vim-powerline'
 Bundle 'ref.vim'
-Bundle 'git://github.com/Shougo/vimproc'
+Bundle 'http://github.com/Shougo/vimproc'
 
 " Color Scheme
 "colorscheme molokai
@@ -38,6 +38,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
 autocmd BufRead,BufNewFile  *.md,*.MD set filetype=markdown
 "保存時に行末の空白を自動で削除
 autocmd BufWritePre * :%s/\s\+$//e
+"
+"grep後に自動的にquickfix-windowを開く
+autocmd QuickFIxCmdPost *grep* cwindow
 
 "neocomplcache用（自動補完）
 let g:neocomplcache_enable_at_startup = 1
