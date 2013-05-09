@@ -36,19 +36,21 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=7
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
-autocmd BufRead,BufNewFile  *.md,*.MD set filetype=markdown
+augroup Basic
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=7
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
+  autocmd BufRead,BufNewFile  *.md,*.MD set filetype=markdown
+"保存時に行末の空白を自動で削除
+  autocmd BufWritePre * :%s/\s\+$//e
+"grep後に自動的にquickfix-windowを開く
+  autocmd QuickFIxCmdPost *grep* cwindow
+augroup END
 
 "Syntax check
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
-"保存時に行末の空白を自動で削除
-autocmd BufWritePre * :%s/\s\+$//e
 
-"grep後に自動的にquickfix-windowを開く
-autocmd QuickFIxCmdPost *grep* cwindow
 
 "for vimfiler keymap
 "vimデフォルトのエクスプローラをvimfilerで置き換える
@@ -88,7 +90,10 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *¥t]¥.¥w*¥|¥h¥w*::'
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+augroup Ruby
+  autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+augroup END
+
 " 閉じ括弧を自動補完
 inoremap ( ()<Left>
 inoremap { {}<Left>
