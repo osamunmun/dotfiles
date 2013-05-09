@@ -8,6 +8,7 @@ call vundle#rc()
 " vim-scripts リポジトリ
 Bundle 'http://github.com/tpope/vim-rails.git'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
 Bundle 'https://github.com/Shougo/neosnippet'
 Bundle 'neocomplcache'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -38,9 +39,36 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
 autocmd BufRead,BufNewFile  *.md,*.MD set filetype=markdown
 "保存時に行末の空白を自動で削除
 autocmd BufWritePre * :%s/\s\+$//e
-"
+
 "grep後に自動的にquickfix-windowを開く
 autocmd QuickFIxCmdPost *grep* cwindow
+
+"for vimfiler keymap
+"vimデフォルトのエクスプローラをvimfilerで置き換える
+let g:vimfiler_as_default_explorer = 1
+"セーフモードを無効にした状態で起動する
+let g:vimfiler_safe_mode_by_default = 0
+"現在開いているバッファをIDE風に開く
+nnoremap <silent> <Leader>f :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+
+"unite prefix key.
+nnoremap [unite] <Nop>
+nmap <Space>f [unite]
+"bookmarkだけホームディレクトリに保存
+let g:unite_source_bookmark_directory = $HOME . '/.unite/bookmark'
+"現在開いているファイルのディレクトリ下のファイル一覧。
+"開いていない場合はカレントディレクトリ
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+"バッファ一覧
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+"レジスタ一覧
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+"最近使用したファイル一覧
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+"ブックマーク一覧
+nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+"ブックマークに追加
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 
 "neocomplcache用（自動補完）
 let g:neocomplcache_enable_at_startup = 1
