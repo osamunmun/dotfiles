@@ -4,6 +4,9 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+#Set RSENSE
+export RSENSE_HOME="$HOME/opt/rsense-0.3"
+
 #Set Alias Commands
 alias be='bundle exec'
 alias ber='bundle exec rake'
