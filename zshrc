@@ -1,7 +1,7 @@
 # Created by newuser for 4.3.10
 
 #Set Rbenv paths
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/bin:$PATH"
 eval "$(rbenv init -)"
 
 #Set Alias Commands
@@ -16,6 +16,7 @@ alias gdif='git diff'
 alias gremov='git remote -v'
 alias gbranr='git branch -r'
 alias bespec='bundle exec foreman run rspec'
+alias bespec='find ~/Documents/LimeChatTranscripts/ | xargs grep -i ume | grep -v joined | grep -v left | less'
 
 ## Directory to save history
 HISTFILE=~/.zsh-history

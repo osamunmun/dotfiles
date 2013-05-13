@@ -1,24 +1,34 @@
-"vundle 対応
 set nocompatible
-filetype off
-"Please set your own vundle directory.
-set rtp+=~/.dotfiles/dotfiles/vim/vimfiles/vundle/
-call vundle#rc()
+"Please set your own Neobundle directory.
+if has('vim_starting')
+  set runtimepath+=~/.dotfiles/dotfiles/vim/vimfiles/bundle/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+filetype plugin off
+filetype indent off
 
-" vim-scripts リポジトリ
-Bundle 'http://github.com/tpope/vim-rails.git'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimfiler'
-Bundle 'https://github.com/Shougo/neosnippet'
-Bundle 'neocomplcache'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'http://github.com/Shougo/vimshell.git'
-Bundle 'http://github.com/thinca/vim-quickrun.git'
-Bundle 'https://github.com/Lokaltog/vim-powerline'
-Bundle 'ref.vim'
-Bundle 'http://github.com/Shougo/vimproc'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'scrooloose/syntastic'
+NeoBundleFetch 'http://github.com/Shougo/neobundle.vim'
+
+NeoBundle 'http://github.com/Shougo/vimproc'
+NeoBundle 'http://github.com/Shougo/vim-rails.git'
+NeoBundle 'http://github.com/Shougo/unite.vim'
+NeoBundle 'http://github.com/Shougo/vimfiler'
+NeoBundle 'http://github.com/Shougo/neosnippet'
+NeoBundle 'http://github.com/Shougo/vimshell.git'
+NeoBundle 'http://github.com/tpope/vim-rails.git'
+NeoBundle 'http://github.com/Shougo/neocomplcache'
+NeoBundle 'http://github.com/nathanaelkane/vim-indent-guides'
+NeoBundle 'http://github.com/thinca/vim-quickrun.git'
+NeoBundle 'http://github.com/vim-scripts/ref.vim'
+NeoBundle 'http://github.com/Lokaltog/vim-powerline'
+NeoBundle 'http://github.com/vim-ruby/vim-ruby'
+NeoBundle 'http://github.com/scrooloose/syntastic'
+NeoBundle 'http://github.com/tomtom/tcomment_vim'
+NeoBundle 'http://github.com/kana/vim-surround'
+
+filetype plugin on
+filetype indent on
+NeoBundleCheck
 
 " Color Scheme
 "colorscheme molokai
