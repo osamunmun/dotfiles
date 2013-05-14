@@ -25,6 +25,7 @@ NeoBundle 'http://github.com/scrooloose/syntastic'
 NeoBundle 'http://github.com/tomtom/tcomment_vim'
 NeoBundle 'http://github.com/kana/vim-surround'
 NeoBundle 'http://github.com/vim-scripts/grep.vim.git'
+NeoBundle 'http://github.com/vim-scripts/sudo.vim.git'
 
 filetype plugin on
 filetype indent on
