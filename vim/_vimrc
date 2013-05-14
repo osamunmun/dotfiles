@@ -10,7 +10,6 @@ filetype indent off
 NeoBundleFetch 'http://github.com/Shougo/neobundle.vim'
 
 NeoBundle 'http://github.com/Shougo/vimproc'
-NeoBundle 'http://github.com/Shougo/vim-rails.git'
 NeoBundle 'http://github.com/Shougo/unite.vim'
 NeoBundle 'http://github.com/Shougo/vimfiler'
 NeoBundle 'http://github.com/Shougo/neosnippet'
@@ -25,6 +24,7 @@ NeoBundle 'http://github.com/vim-ruby/vim-ruby'
 NeoBundle 'http://github.com/scrooloose/syntastic'
 NeoBundle 'http://github.com/tomtom/tcomment_vim'
 NeoBundle 'http://github.com/kana/vim-surround'
+NeoBundle 'http://github.com/vim-scripts/grep.vim.git'
 
 filetype plugin on
 filetype indent on
@@ -41,6 +41,9 @@ set nocompatible
 set number
 set showmatch
 set clipboard=unnamed,autoselect
+"exclude for grep
+set grepprg=grep\ --ignore-dir=.bundle
+
 "set ts=4 sw=4 et
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
