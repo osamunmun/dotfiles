@@ -78,8 +78,6 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 "現在開いているバッファをIDE風に開く
 nnoremap <silent> <Leader>f :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
-"Open folding
-nnoremap <expr>l  foldclosed('.') != -1 ? 'zo' : 'l')
 
 "unite prefix key.
 nnoremap [unite] <Nop>
