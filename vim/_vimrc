@@ -27,6 +27,7 @@ NeoBundle 'http://github.com/kana/vim-surround'
 NeoBundle 'http://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'http://github.com/vim-scripts/sudo.vim.git'
 NeoBundle 'http://github.com/LeafCage/foldCC.git'
+NeoBundle 'http://github.com/vim-scripts/ruby-matchit.git'
 
 filetype plugin on
 filetype indent on
@@ -112,6 +113,8 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *¥t]¥.¥w*¥|¥h¥w*::'
 augroup Ruby
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 augroup END
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
 
 " 閉じ括弧を自動補完
 inoremap ( ()<Left>
