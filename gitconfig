@@ -1,0 +1,10 @@
+[merge]
+  ff = false
+[user]
+  name = osamunmun
+  email = osamu.takayasu@gmail.com
+[color]
+  ui = auto
+[core]
+  excludesfile = /home/osamunmun/.gitignore
+  editor = vim -u NONE -N
