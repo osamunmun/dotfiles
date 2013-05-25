@@ -18,6 +18,14 @@ alias gbranr='git branch -r'
 alias bespec='bundle exec foreman run rspec'
 alias bespec='find ~/Documents/LimeChatTranscripts/ | xargs grep -i ume | grep -v joined | grep -v left | less'
 
+#=============================
+# source zsh-syntax-highlighting
+# git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git
+#=============================
+if [ -f ~/.dotfiles/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.dotfiles/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 ## Directory to save history
 HISTFILE=~/.zsh-history
 ## the number of histories load into memory
