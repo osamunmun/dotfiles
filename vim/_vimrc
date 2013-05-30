@@ -19,7 +19,8 @@ NeoBundle 'http://github.com/Shougo/neocomplcache'
 NeoBundle 'http://github.com/nathanaelkane/vim-indent-guides'
 NeoBundle 'http://github.com/thinca/vim-quickrun.git'
 NeoBundle 'http://github.com/vim-scripts/ref.vim'
-NeoBundle 'http://github.com/Lokaltog/vim-powerline'
+NeoBundle 'http://github.com/taichouchou2/alpaca_powertabline'
+NeoBundle 'http://github.com/Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim' }
 NeoBundle 'http://github.com/vim-ruby/vim-ruby'
 NeoBundle 'http://github.com/scrooloose/syntastic'
 NeoBundle 'http://github.com/tomtom/tcomment_vim'
@@ -51,6 +52,7 @@ set backspace=2
 set foldtext=foldtext()
 set foldmethod=marker
 set foldcolumn=2
+set laststatus=2
 
 "set ts=4 sw=4 et
 let g:indent_guides_auto_colors = 0
