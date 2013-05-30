@@ -17,6 +17,8 @@ alias gremov='git remote -v'
 alias gbranr='git branch -r'
 alias bespec='bundle exec foreman run rspec'
 alias bespec='find ~/Documents/LimeChatTranscripts/ | xargs grep -i ume | grep -v joined | grep -v left | less'
+alias tmuxd='tmux detach'
+alias tmuxa='tmux attach'
 
 #=============================
 # source zsh-syntax-highlighting
