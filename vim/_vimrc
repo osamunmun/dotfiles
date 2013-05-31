@@ -30,6 +30,7 @@ NeoBundle 'http://github.com/vim-scripts/sudo.vim.git'
 NeoBundle 'http://github.com/LeafCage/foldCC.git'
 NeoBundle 'http://github.com/vim-scripts/ruby-matchit.git'
 NeoBundle 'http://github.com/tpope/vim-endwise'
+NeoBundle 'http://github.com/vim-scripts/yanktmp.vim.git'
 
 filetype plugin on
 filetype indent on
@@ -123,6 +124,11 @@ runtime! macros/matchit.vim
 inoremap ( ()<Left>
 inoremap { {}<Left>
 inoremap [ []<left>
+
+" for yanktmp.vim
+map <silent> sy :call YanktmpYank()<CR>
+map <silent> sp :call YanktmpPaste_p()<CR>
+map <silent> sP :call YanktmpPaste_P()<CR>
 
 " snippetを<Tab> にマッピング
 imap <expr><Tab> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<Tab>"
