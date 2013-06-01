@@ -8,3 +8,13 @@
 [core]
   excludesfile = /home/osamunmun/.gitignore
   editor = vim -u NONE -N
+[alias]
+  co = checkout
+  ci = commit
+  br = branch
+  di = diff
+  st = status -sb
+  prev = !git log $1@{yesterday}..$1
+  stat = log --graph --decorate --stat
+  unstage = reset HEAD --
+  history = log --pretty=format:\"%C(yellow)%h %C(white)%aD %C(black)%ar [%an]%n%s%n\" --graph
