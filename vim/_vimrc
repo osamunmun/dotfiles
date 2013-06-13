@@ -91,13 +91,13 @@ nmap <Space>f [unite]
 let g:unite_source_bookmark_directory = $HOME . '/.unite/bookmark'
 "現在開いているファイルのディレクトリ下のファイル一覧。
 "開いていない場合はカレントディレクトリ
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file -start-insert<CR>
 "バッファ一覧
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 "レジスタ一覧
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 "最近使用したファイル一覧
-nnoremap <silent> [unite]h :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]h :<C-u>Unite file_mru -start-insert<CR>
 "ブックマーク一覧
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 "ブックマークに追加
