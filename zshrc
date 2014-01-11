@@ -1,7 +1,9 @@
 # Created by newuser for 4.3.10
 
 #Set Rbenv paths
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$(brew --prefix coreutils)/libexec/gnubin):$PATH"
+
+export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
 eval "$(rbenv init -)"
 
 #Set Alias Commands
@@ -33,6 +35,18 @@ bindkey -s '^z' '^[q %vi^m']
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/takayasu/.zshrc'
+
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
+
+if [ -f ~/.dircolors ]; then
+  if type dircolors > /dev/null 2>&1; then
+    eval $(dircolors ~/.dircolors)
+  elif type gdircolors > /dev/null 2>&1; then
+    eval $(gdircolors ~/.dircolors)
+  fi
+fi
 
 ## Emphasize input support
 autoload -Uz compinit
