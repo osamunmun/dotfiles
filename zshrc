@@ -14,6 +14,7 @@ alias gci='git commit'
 alias gis='git status'
 alias gdif='git diff'
 alias gremov='git remote -v'
+alias gb='git branch -a'
 alias gbranr='git branch -r'
 alias bespec='bundle exec foreman run rspec'
 
