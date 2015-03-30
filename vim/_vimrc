@@ -1,21 +1,42 @@
 "vundle 対応
 set nocompatible
-filetype off
-"Please set your own vundle directory.
-set rtp+=~/dotfiles/vim/vimfiles/vundle/
-call vundle#rc()
+"Please set your own Neobundle directory.
+if has('vim_starting')
+  set runtimepath+=~/Dropbox/dotfiles/vim/vimfiles/bundle/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+filetype plugin off
+filetype indent off
 
-" vim-scripts リポジトリ
-Bundle 'git://github.com/tpope/vim-rails.git'
-Bundle 'Shougo/unite.vim'
-Bundle 'https://github.com/Shougo/neosnippet'
-Bundle 'neocomplcache'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'http://github.com/Shougo/vimshell.git'
-Bundle 'http://github.com/thinca/vim-quickrun.git'
-Bundle 'https://github.com/Lokaltog/vim-powerline'
-Bundle 'ref.vim'
-Bundle 'git://github.com/Shougo/vimproc'
+NeoBundleFetch 'http://github.com/Shougo/neobundle.vim'
+
+NeoBundle 'http://github.com/Shougo/vimproc'
+NeoBundle 'http://github.com/Shougo/unite.vim'
+NeoBundle 'http://github.com/Shougo/vimfiler'
+NeoBundle 'http://github.com/Shougo/neosnippet'
+NeoBundle 'http://github.com/Shougo/vimshell.git'
+NeoBundle 'http://github.com/tpope/vim-rails.git'
+NeoBundle 'http://github.com/Shougo/neocomplcache'
+NeoBundle 'http://github.com/nathanaelkane/vim-indent-guides'
+NeoBundle 'http://github.com/thinca/vim-quickrun.git'
+NeoBundle 'http://github.com/vim-scripts/ref.vim'
+NeoBundle 'http://github.com/taichouchou2/alpaca_powertabline'
+NeoBundle 'http://github.com/vim-ruby/vim-ruby'
+NeoBundle 'http://github.com/scrooloose/syntastic'
+NeoBundle 'http://github.com/tomtom/tcomment_vim'
+NeoBundle 'http://github.com/kana/vim-surround'
+NeoBundle 'http://github.com/vim-scripts/grep.vim.git'
+NeoBundle 'http://github.com/vim-scripts/sudo.vim.git'
+NeoBundle 'http://github.com/LeafCage/foldCC.git'
+NeoBundle 'http://github.com/vim-scripts/ruby-matchit.git'
+NeoBundle 'http://github.com/tpope/vim-endwise'
+NeoBundle 'http://github.com/vim-scripts/yanktmp.vim.git'
+NeoBundle 'http://github.com/h1mesuke/vim-alignta.git'
+NeoBundle 'https://github.com/slim-template/vim-slim.git'
+
+filetype plugin on
+filetype indent on
+NeoBundleCheck
 
 " Color Scheme
 "colorscheme molokai

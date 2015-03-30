@@ -4,6 +4,7 @@
 export PATH="$HOME/.rbenv/bin:$(brew --prefix coreutils)/libexec/gnubin):$PATH"
 
 export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
+export PATH="$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 eval "$(rbenv init -)"
 
 #Set Alias Commands
@@ -18,7 +19,31 @@ alias gdif='git diff'
 alias gremov='git remote -v'
 alias gb='git branch -a'
 alias gbranr='git branch -r'
+alias gch='git checkout'
 alias bespec='bundle exec foreman run rspec'
+alias tmuxd='tmux detach'
+alias tmuxa='tmux attach'
+alias r='rails'
+alias c='console'
+alias ls='ls --color'
+alias dps='docker ps'
+alias ds='docker stop'
+alias dr='docker run'
+alias db='docker build'
+
+# setting for nvm
+[[ -s /Users/osamutakayasu/.nvm/nvm.sh ]] && . /Users/osamutakayasu/.nvm/nvm.sh
+nvm use default
+npm_dir=${NVM_PATH}_modules
+export NODE_PATH=$npm_dir
+
+#=============================
+# source zsh-syntax-highlighting
+# git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git
+#=============================
+if [ -f ~/Dropbox/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/Dropbox/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 ## Directory to save history
 HISTFILE=~/.zsh-history
@@ -124,3 +149,6 @@ setopt list_packed
 setopt noautoremoveslash
 
 # End of lines added by compinstall)
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
