@@ -1,13 +1,14 @@
 set nocompatible
 "Please set your own Neobundle directory.
 if has('vim_starting')
-  set runtimepath+=~/.dotfiles/dotfiles/vim/vimfiles/bundle/neobundle.vim
+  set runtimepath+=~/.dotfiles/vim/bundle/neobundle.vim
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.dotfiles/vim/bundle/'))
+NeoBundleFetch 'http://github.com/Shougo/neobundle.vim'
+call neobundle#end()
 filetype plugin off
 filetype indent off
 
-NeoBundleFetch 'http://github.com/Shougo/neobundle.vim'
 
 NeoBundle 'http://github.com/Shougo/vimproc'
 NeoBundle 'http://github.com/Shougo/unite.vim'
