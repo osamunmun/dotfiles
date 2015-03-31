@@ -26,8 +26,8 @@ alias c='console'
 # source zsh-syntax-highlighting
 # git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git
 #=============================
-if [ -f ~/.dotfiles/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.dotfiles/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ## Directory to save history
