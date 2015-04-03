@@ -35,6 +35,9 @@ NeoBundle 'http://github.com/vim-scripts/yanktmp.vim.git'
 NeoBundle 'http://github.com/h1mesuke/vim-alignta.git'
 NeoBundle 'http://github.com/Shougo/neomru.vim'
 NeoBundle 'http://github.com/slim-template/vim-slim.git'
+NeoBundle 'http://github.com/cakebaker/scss-syntax.vim.git'
+NeoBundle 'http://github.com/jelera/vim-javascript-syntax.git'
+NeoBundle 'http://github.com/kchmck/vim-coffee-script.git'
 
 filetype plugin on
 filetype indent on
