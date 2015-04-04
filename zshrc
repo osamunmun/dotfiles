@@ -8,7 +8,7 @@ eval "$(rbenv init -)"
 alias be='bundle exec'
 alias ber='bundle exec rake'
 alias bers='bundle exec rails s -b 0.0.0.0'
-alias bi='bundle install'
+alias bi='bundle install --path=vendor/bundle'
 alias gp='git push'
 alias gad='git add -p'
 alias gci='git commit'
