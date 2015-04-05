@@ -150,6 +150,10 @@ let g:neocomplcache_snippets_dir = '~/.vim/snippets'
 " 補完をキャンセル
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 inoremap <expr><Right> pumvisible() ? neocomplcache#cancel_popup() : "\<Right>"
+" paste mode toggle
+imap <space>p <nop>
+set pastetoggle=<space>p
+
 " set quickrun command
 let g:quickrun_config = {}
 let g:quickrun_config.markdown = {
