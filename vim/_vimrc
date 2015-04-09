@@ -9,7 +9,6 @@ call neobundle#end()
 filetype plugin off
 filetype indent off
 
-
 NeoBundle 'http://github.com/Shougo/vimproc'
 NeoBundle 'http://github.com/Shougo/unite.vim'
 NeoBundle 'http://github.com/Shougo/vimfiler'
@@ -179,3 +178,6 @@ augroup RSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
+
+"Powerline font
+let g:Powerline_symbols = 'fancy'
