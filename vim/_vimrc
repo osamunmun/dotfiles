@@ -13,6 +13,7 @@ NeoBundleFetch 'http://github.com/Shougo/neobundle.vim'
 
 NeoBundle 'http://github.com/Shougo/vimproc'
 NeoBundle 'http://github.com/Shougo/unite.vim'
+NeoBundle 'http://github.com/Shougo/neomru.vim'
 NeoBundle 'http://github.com/Shougo/vimfiler'
 NeoBundle 'http://github.com/Shougo/neosnippet'
 NeoBundle 'http://github.com/Shougo/vimshell.git'
