@@ -20,6 +20,7 @@ alias bespec='bundle exec foreman run rspec'
 alias bespec='find ~/Documents/LimeChatTranscripts/ | xargs grep -i ume | grep -v joined | grep -v left | less'
 alias tmuxd='tmux detach'
 alias tmuxa='tmux attach'
+alias tmux='TERM=screen-256color-bce tmux -CC'
 alias r='rails'
 alias c='console'
 
