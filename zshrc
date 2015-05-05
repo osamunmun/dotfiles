@@ -33,7 +33,8 @@ alias dr='docker run'
 alias db='docker build'
 
 # setting for nvm
-[[ -s /Users/osamutakayasu/.nvm/nvm.sh ]] && . /Users/osamutakayasu/.nvm/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 nvm use default
 npm_dir=${NVM_PATH}_modules
 export NODE_PATH=$npm_dir
