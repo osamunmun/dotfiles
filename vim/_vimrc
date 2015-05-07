@@ -21,6 +21,7 @@ call neobundle#begin(expand('~/.dotfiles/vim/vimfiles/bundle/'))
   NeoBundle 'http://github.com/thinca/vim-quickrun.git'
   NeoBundle 'http://github.com/vim-scripts/ref.vim'
   NeoBundle 'http://github.com/taichouchou2/alpaca_powertabline'
+  NeoBundle 'http://github.com/Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim' }
   NeoBundle 'http://github.com/vim-ruby/vim-ruby'
   NeoBundle 'http://github.com/scrooloose/syntastic'
   NeoBundle 'http://github.com/tomtom/tcomment_vim'
@@ -35,6 +36,7 @@ call neobundle#begin(expand('~/.dotfiles/vim/vimfiles/bundle/'))
   NeoBundle 'http://github.com/slim-template/vim-slim.git'
   NeoBundle 'http://github.com/tomasr/molokai.git'
   NeoBundle 'http://github.com/vim-scripts/twilight.git'
+  NeoBundle 'http://github.com/chase/vim-ansible-yaml.git'
   NeoBundleCheck
 call neobundle#end()
 
