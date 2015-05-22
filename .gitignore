@@ -1,3 +1,4 @@
 vim/vimfiles/vundle
 vim/vimfiles/bundle
 .gitmodules
+*.swp

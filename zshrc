@@ -7,6 +7,9 @@ export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
 export PATH="$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 eval "$(rbenv init -)"
 
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export PATH=/usr/local/share/npm/bin:$PATH
+
 #Set Alias Commands
 alias be='bundle exec'
 alias ber='bundle exec rake'
@@ -31,6 +34,7 @@ alias dps='docker ps'
 alias ds='docker stop'
 alias dr='docker run'
 alias db='docker build'
+alias va='vagrant'
 
 # setting for nvm
 export NVM_DIR=~/.nvm

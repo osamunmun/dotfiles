@@ -145,3 +145,18 @@ augroup END
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
+
+" paste mode toggle
+imap <space>p <nop>
+set pastetoggle=<space>p
+
+" qfixsetting
+set runtimepath+=~/.dotfiles/vim/qfixapp
+" QuickFixウィンドウでもプレビューや絞り込みを有効化
+let QFixWin_EnableMode = 1
+" QFixHowm/QFixGrepの結果表示にロケーションリストを使用する/しない
+let QFix_UseLocationList = 1
+"Grepコマンドのキーマップ
+let MyGrep_Key  = 'g'
+"Grepコマンドの2ストローク目キーマップ
+let MyGrep_KeyB = ''
