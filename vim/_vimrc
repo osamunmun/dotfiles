@@ -21,6 +21,7 @@ call neobundle#begin(expand('~/.dotfiles/vim/vimfiles/bundle/'))
   NeoBundle 'http://github.com/thinca/vim-quickrun.git'
   NeoBundle 'http://github.com/vim-scripts/ref.vim'
   NeoBundle 'http://github.com/bling/vim-airline'
+  NeoBundle 'http://github.com/itchyny/lightline.vim.git'
   NeoBundle 'http://github.com/vim-ruby/vim-ruby'
   NeoBundle 'http://github.com/scrooloose/syntastic'
   NeoBundle 'http://github.com/tomtom/tcomment_vim'
@@ -36,6 +37,8 @@ call neobundle#begin(expand('~/.dotfiles/vim/vimfiles/bundle/'))
   NeoBundle 'http://github.com/tomasr/molokai.git'
   NeoBundle 'http://github.com/vim-scripts/twilight.git'
   NeoBundle 'http://github.com/chase/vim-ansible-yaml.git'
+  NeoBundle 'http://github.com/tpope/vim-fugitive.git'
+  NeoBundle 'https://github.com/airblade/vim-gitgutter.git'
 call neobundle#end()
 NeoBundleCheck
 
@@ -134,11 +137,6 @@ augroup RSpec
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
-" Powerlineの設定
-set laststatus=2
-" let g:Powerline_symbols = 'fancy'
-set t_Co=256
-
 " qfixsetting
 set runtimepath+=~/.dotfiles/vim/qfixapp
 " QuickFixウィンドウでもプレビューや絞り込みを有効化
@@ -149,3 +147,76 @@ let QFix_UseLocationList = 1
 let MyGrep_Key  = 'g'
 "Grepコマンドの2ストローク目キーマップ
 let MyGrep_KeyB = ''
+
+" airline settings
+" Powerlineの設定
+set laststatus=2
+" let g:Powerline_symbols = 'fancy'
+set t_Co=256
+let g:airline_powerline_fonts = 1
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'MyFugitive',
+      \   'readonly': 'MyReadonly',
+      \   'modified': 'MyModified',
+      \   'filename': 'MyFilename',
+      \   'gitgutter': 'MyGitGutter'
+      \ }
+      \ }
+
+function! MyModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! MyReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! MyFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+function! MyFilename()
+  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+
+function! MyGitGutter()
+  if ! exists('*GitGutterGetHunkSummary')
+        \ || ! get(g:, 'gitgutter_enabled', 0)
+        \ || winwidth('.') <= 90
+    return ''
+  endif
+  let symbols = [
+        \ g:gitgutter_sign_added . ' ',
+        \ g:gitgutter_sign_modified . ' ',
+        \ g:gitgutter_sign_removed . ' '
+        \ ]
+  let hunks = GitGutterGetHunkSummary()
+  let ret = []
+  for i in [0, 1, 2]
+    if hunks[i] > 0
+      call add(ret, symbols[i] . hunks[i])
+    endif
+  endfor
+  return join(ret, ' ')
+endfunction
