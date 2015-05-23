@@ -59,9 +59,6 @@ HISTSIZE=100000
 SAVEHIST=100000
 bindkey -v
 bindkey -e
-bindkey '^r' history-incremental-search-backward
-bindkey '^p' history-beginning-search-backward
-bindkey '^n' history-beginning-search-forward
 bindkey -s '^z' '^[q %vi^m']
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -158,3 +155,27 @@ setopt noautoremoveslash
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### antigen
+source ~/.dotfiles/zshrc.antigen
+## cdr
+autoload -Uz add-zsh-hock
+autoload -Uz chpwd_recent_dirs cdr
+add-zsh-hook  chpwd chpwd_recent_dirs
+
+function peco-select-history() {
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(\history -n 1 | \
+    eval $tac | \
+    awk '!a[$0]++' | \
+    peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
