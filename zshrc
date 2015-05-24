@@ -159,7 +159,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### antigen
 source ~/.dotfiles/zshrc.antigen
 ## cdr
-autoload -Uz add-zsh-hock
+autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook  chpwd chpwd_recent_dirs
 
