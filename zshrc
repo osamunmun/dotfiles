@@ -7,6 +7,10 @@ export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
 export PATH="$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 eval "$(rbenv init -)"
 
+#Python settings
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT=/usr/local/opt/pyenv
+
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
 
