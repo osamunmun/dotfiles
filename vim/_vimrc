@@ -38,12 +38,19 @@ call neobundle#begin(expand('~/.dotfiles/vim/vimfiles/bundle/'))
   NeoBundle 'http://github.com/vim-scripts/twilight.git'
   NeoBundle 'http://github.com/chase/vim-ansible-yaml.git'
   NeoBundle 'http://github.com/tpope/vim-fugitive.git'
-  NeoBundle 'https://github.com/airblade/vim-gitgutter.git'
+  NeoBundle 'http://github.com/airblade/vim-gitgutter.git'
+  NeoBundle 'http://github.com/kchmck/vim-coffee-script.git'
+  NeoBundle "http://github.com/hynek/vim-python-pep8-indent"
 call neobundle#end()
 NeoBundleCheck
 
 filetype plugin on
 filetype indent on
+
+"for python
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Color Scheme
 colorscheme molokai
@@ -55,12 +62,13 @@ set number
 set showmatch
 set clipboard=unnamed,autoselect
 set ts=2 sw=2 et
-" let g:indent_guides_auto_colors = 0
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_guide_size = 1
-" let g:indent_guides_start_level = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=7
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=3
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
+
 autocmd BufRead,BufNewFile  *.md,*.MD set filetype=markdown
 "保存時に行末の空白を自動で削除
 autocmd BufWritePre * :%s/\s\+$//e
@@ -110,7 +118,7 @@ let g:neocomplcache_min_syntax_length = 3
  autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " snippetを<Tab> にマッピング
-imap <expr><Tab> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<Tab>"
+" imap <expr><Tab> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<Tab>"
 " 1番目の候補を自動選択
 let g:neocomplcache_enable_auto_select = 1
 " 補完候補が表示されている場合は確定。そうでない場合は改行
