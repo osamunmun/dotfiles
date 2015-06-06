@@ -8,7 +8,7 @@ export PATH="$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreutils)/libexec/gnu
 eval "$(rbenv init -)"
 
 #Python settings
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+eval "$(pyenv init -)"
 export PYENV_ROOT=/usr/local/opt/pyenv
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
