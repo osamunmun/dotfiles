@@ -1,15 +1,17 @@
 # Created by newuser for 4.3.10
 
+
 #Set Rbenv paths
 export PATH="$HOME/.rbenv/bin:$(brew --prefix coreutils)/libexec/gnubin):$PATH"
 
 export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
-export PATH="$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="/usr/local/bin:$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 eval "$(rbenv init -)"
 
 #Python settings
-eval "$(pyenv init -)"
-export PYENV_ROOT=/usr/local/opt/pyenv
+# eval "$(pyenv init -)"
+# export PYENV_ROOT=/usr/local/opt/pyenv
+source /usr/local/bin/virtualenvwrapper.sh
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
