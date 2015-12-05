@@ -278,3 +278,4 @@ endfunction
 
 set backspace=indent,eol,start
 set backspace=2
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
