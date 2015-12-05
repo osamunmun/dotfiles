@@ -41,6 +41,8 @@ alias ds='docker stop'
 alias dr='docker run'
 alias db='docker build'
 alias va='vagrant'
+alias sed='gsed'
+alias py='source ~/Projects/python_env/bin/activate'
 
 # setting for nvm
 export NVM_DIR=~/.nvm
