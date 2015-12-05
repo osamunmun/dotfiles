@@ -42,7 +42,6 @@ alias dr='docker run'
 alias db='docker build'
 alias va='vagrant'
 alias sed='gsed'
-alias py='source ~/Projects/python_env/bin/activate'
 
 # setting for nvm
 export NVM_DIR=~/.nvm
@@ -55,8 +54,8 @@ export NODE_PATH=$npm_dir
 # source zsh-syntax-highlighting
 # git submodule add https://github.com/zsh-users/zsh-syntax-highlighting.git
 #=============================
-if [ -f ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ~/Dropbox/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source ~/Dropbox/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ## Directory to save history
@@ -165,7 +164,7 @@ setopt noautoremoveslash
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### antigen
-source ~/.dotfiles/zshrc.antigen
+source ~/Dropbox/dotfiles/zshrc.antigen
 ## cdr
 autoload -Uz add-zsh-hook
 autoload -Uz chpwd_recent_dirs cdr
@@ -208,3 +207,4 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;220m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
