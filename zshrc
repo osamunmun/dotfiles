@@ -1,5 +1,15 @@
 # Created by newuser for 4.3.10
 
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+fi
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# added by Anaconda3 4.1.1 installer
+export PATH="/Users/osamunmun/anaconda/bin:$PATH"
 
 #Set Rbenv paths
 export PATH="$HOME/.rbenv/bin:$(brew --prefix coreutils)/libexec/gnubin):$PATH"
@@ -9,9 +19,14 @@ export PATH="/usr/local/bin:$HOME/.rbenv/shims:$HOME/bin:$(brew --prefix coreuti
 eval "$(rbenv init -)"
 
 #Python settings
+# export PYENV_ROOT=~/.pyenv
+### Virtualenvwrapper
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#   export WORKON_HOME=$HOME/.virtualenvs
+#   source /usr/local/bin/virtualenvwrapper.sh
+# fi
+# export PATH=$PYENV_ROOT/bin:$PATH
 # eval "$(pyenv init -)"
-# export PYENV_ROOT=/usr/local/opt/pyenv
-source /usr/local/bin/virtualenvwrapper.sh
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
